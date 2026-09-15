@@ -226,7 +226,7 @@ details[open] .tgl::before{content:"–";}
 .top svg{width:16px;height:16px;}
 
 @media (max-width:820px){
-  .nav{flex-wrap:wrap;gap:.7rem;padding:.8rem 1rem;}
+  .nav{flex-wrap:wrap;gap:.7rem;padding:.8rem var(--pad);}
   .nav-right{width:100%;justify-content:space-between;}
   .hero-grid{grid-template-columns:1fr;}
   .photo-frame{width:min(170px,56vw);margin:0 auto 1rem;}
@@ -245,7 +245,7 @@ details[open] .tgl::before{content:"–";}
   .nav-idx{display:none;}
 }
 @media (max-width:460px){
-  :root{--pad:1.25rem;}
+  :root{--pad:1.5rem;}
   .hero-grid{grid-template-columns:1fr;}
   .photo-frame{width:145px;}
   .lead{max-width:none;}
