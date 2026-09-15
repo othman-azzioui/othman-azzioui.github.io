@@ -123,22 +123,25 @@ ul{margin:0;}
 .hero{padding:clamp(2.4rem,6vw,4.6rem) 0 clamp(1.8rem,4vw,2.8rem);}
 .hero-grid{display:grid;grid-template-columns:186px 1fr;gap:clamp(1.5rem,4vw,3rem);align-items:start;}
 .photo-frame{position:relative;}
-.photo-frame img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;}
+.photo-frame img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;background:linear-gradient(135deg, rgba(255,255,255,.2), transparent);}
 .photo-frame::before,.photo-frame::after{content:"";position:absolute;width:30px;height:30px;border:1px solid var(--accent);}
 .photo-frame::before{left:-9px;top:-9px;border-right:0;border-bottom:0;}
 .photo-frame::after{right:-9px;bottom:-9px;border-left:0;border-top:0;}
 .eyebrow{font-size:.76rem;letter-spacing:.19em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;}
-.hero h1{font-size:clamp(2.05rem,3vw + 1.2rem,3.15rem);}
+.hero h1{font-size:clamp(2.05rem,3vw + 1.2rem,3.15rem);letter-spacing:-.04em;}
 .lead{font-family:var(--f-display);font-style:italic;font-size:clamp(1.05rem,1.1vw + .8rem,1.42rem);line-height:1.35;color:var(--ink-3);max-width:31ch;margin-top:.75rem;text-wrap:balance;}
 .cred{margin-top:.9rem;font-size:.93rem;color:rgba(21,23,15,.68);max-width:58ch;line-height:1.6;}
+.quick-facts{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1rem;}
+.quick-facts span{display:inline-flex;align-items:center;padding:.42rem .72rem;border:1px solid rgba(21,23,15,.09);background:rgba(255,255,255,.3);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);}
 .cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.5rem;}
-.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.72rem 1.25rem;font-size:.9rem;font-weight:500;border:1px solid var(--ink);transition:transform .22s var(--ease),background .22s,color .22s,box-shadow .22s;}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.72rem 1.25rem;font-size:.9rem;font-weight:500;border:1px solid var(--ink);transition:transform .22s var(--ease),background .22s,color .22s,box-shadow .22s;border-radius:999px;}
 .btn svg{width:16px;height:16px;}
-.btn-1{background:var(--brass);border-color:var(--brass);color:var(--paper);}
-.btn-1:hover{transform:translateY(-2px);box-shadow:0 8px 18px -10px rgba(21,23,15,.55);}
+.btn-1{background:var(--brass);border-color:var(--brass);color:var(--paper);box-shadow:0 12px 26px -20px rgba(21,23,15,.7);}
+.btn-1:hover{transform:translateY(-2px);box-shadow:0 18px 28px -18px rgba(21,23,15,.72);}
 .btn-2{background:transparent;}
 .btn-2:hover{background:var(--ink);color:var(--paper);transform:translateY(-2px);}
-.stats{display:flex;flex-wrap:wrap;gap:clamp(1.4rem,4.5vw,3.2rem);margin-top:2.3rem;padding-top:1.5rem;border-top:1px solid var(--line-light);}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:2.1rem;padding-top:1.3rem;border-top:1px solid var(--line-light);}
+.stat{padding:1rem .85rem .9rem;border:1px solid rgba(21,23,15,.08);background:linear-gradient(180deg, rgba(255,255,255,.28), rgba(255,255,255,.12));border-radius:14px;}
 .stat-n{font-family:var(--f-display);font-size:2rem;line-height:1;color:var(--accent);font-variant-numeric:tabular-nums;}
 .stat-l{font-size:.8rem;color:rgba(21,23,15,.6);max-width:15ch;margin-top:.35rem;line-height:1.35;}
 
@@ -449,6 +452,11 @@ details[open] .tgl::before{content:"–";}
         <h1>Othman Azzioui</h1>
         <p class="lead">À la recherche d'une alternance en Licence Administrateur d'Infrastructures Sécurisées.</p>
         <p class="cred">BTS Services Informatiques aux Organisations, option Solutions d'Infrastructure, Systèmes et Réseaux — Lycée André Malraux, Le Mans. Deux stages en administration réseau, dont un sur une infrastructure critique départementale.</p>
+        <div class="quick-facts" aria-label="Informations rapides">
+          <span>Le Mans</span>
+          <span>Permis B</span>
+          <span>Disponible 2026</span>
+        </div>
         <div class="cta">
           <a class="btn btn-1" href="CV_Othman_Azzioui_Informatique.pdf" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
@@ -457,9 +465,9 @@ details[open] .tgl::before{content:"–";}
           <a class="btn btn-2" href="mailto:othman.azzioui.pro@gmail.com">Écrire un e-mail</a>
         </div>
         <div class="stats">
-          <div><div class="stat-n" data-count="2">2</div><div class="stat-l">stages en administration réseau</div></div>
-          <div><div class="stat-n" data-count="76">76</div><div class="stat-l">casernes dans le périmètre d'un projet</div></div>
-          <div><div class="stat-n" data-count="3">3</div><div class="stat-l">certifications obtenues</div></div>
+          <div class="stat"><div class="stat-n" data-count="2">2</div><div class="stat-l">stages en administration réseau</div></div>
+          <div class="stat"><div class="stat-n" data-count="76">76</div><div class="stat-l">casernes dans le périmètre d'un projet</div></div>
+          <div class="stat"><div class="stat-n" data-count="3">3</div><div class="stat-l">certifications obtenues</div></div>
         </div>
       </div>
     </div>
@@ -755,6 +763,11 @@ details[open] .tgl::before{content:"–";}
         <h1>Othman Azzioui</h1>
         <p class="lead">À la recherche d'une nouvelle opportunité en vente, accueil et événementiel.</p>
         <p class="cred">Cinq expériences de terrain en relation client : prospection commerciale, vente et encaissement en magasin, puis accueil du public et carrés VIP sur de grands événements sportifs. Disponible sur Le Mans et ses alentours — permis B.</p>
+        <div class="quick-facts" aria-label="Informations rapides">
+          <span>Le Mans</span>
+          <span>Permis B</span>
+          <span>Service client</span>
+        </div>
         <div class="cta">
           <a class="btn btn-1" href="CV_Othman_Azzioui_Commerce.pdf" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
@@ -763,9 +776,9 @@ details[open] .tgl::before{content:"–";}
           <a class="btn btn-2" href="mailto:othman.azzioui.pro@gmail.com">Écrire un e-mail</a>
         </div>
         <div class="stats">
-          <div><div class="stat-n" data-count="5">5</div><div class="stat-l">expériences en relation client</div></div>
-          <div><div class="stat-n" data-count="4">4</div><div class="stat-l">langues pratiquées</div></div>
-          <div><div class="stat-n" data-count="3">3</div><div class="stat-l">certifications obtenues</div></div>
+          <div class="stat"><div class="stat-n" data-count="5">5</div><div class="stat-l">expériences en relation client</div></div>
+          <div class="stat"><div class="stat-n" data-count="4">4</div><div class="stat-l">langues pratiquées</div></div>
+          <div class="stat"><div class="stat-n" data-count="3">3</div><div class="stat-l">certifications obtenues</div></div>
         </div>
       </div>
     </div>
